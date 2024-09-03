@@ -9,6 +9,7 @@ public class Main {
         int lt=0;
         int rt=ch.length-1;
         while(lt<rt) {
+
             if(!Character.isLetter(ch[lt]) ) {    // 문자가 아닐 경우 다음 반복문으로 이동
                 lt++;
             }else if (!Character.isLetter(ch[rt])){

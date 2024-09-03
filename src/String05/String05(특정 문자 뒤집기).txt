@@ -29,3 +29,4 @@ Charter.isLetter(char c)
 리턴 문자열 값은 똑같은데 코딩테스트 결과는 실패가 뜨는 이유가 무엇일까?
 lt, rt 모두 문자열인지 검사를 해야했었다.
 => lr와 rt가 가리키는 곳이 모두 문자열일 경우에 두 문자를 뒤집는 문제였다.
+Character.isAlphabetic(ch[lt]) => 문자열인지 검사
