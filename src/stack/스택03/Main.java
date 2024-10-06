@@ -12,27 +12,11 @@ public class Main {
         Stack<Integer> stack = new Stack<>();
         // moves 순회
         for (int pos : moves) {
-           /* // 0이 아닌 첫 번째 요소를 꺼내서 스택에 삽입
-            for (int i=0; i<n; i++) {
-                if (arr[i][pos-1] != 0) {
-                    // stack에 있는지 검사하고 요소가 같으면 pop, 같지 않다면 push
-                    if (stack.isEmpty()) {
-                        stack.push(arr[i][pos-1]);
-                    } else if (stack.peek() == arr[i][pos-1]) {
-                        stack.pop();
-                        answer = answer +2;
-                    } else {
-                        stack.push(arr[i][pos-1]);
-                    }
-                    arr[i][pos-1] = 0;
-                    break;
-                }
-            }*/
             for (int i=0; i<arr.length; i++) {
                 if (arr[i][pos - 1] != 0) {
                     int temp = arr[i][pos - 1];
                     arr[i][pos - 1] = 0;
-                    if (stack.isEmpty() && temp == stack.peek()) {
+                    if (!stack.isEmpty() && temp == stack.peek()) {
                         answer +=2;
                         stack.pop();
                     } else stack.push(temp);
