@@ -52,3 +52,5 @@ contains(Object o) : o라는 객체를 가지고 있는지 ?
 앞에서부터 빼서 뒤에 넣기
 k번째 수는 poll()
 
+큐 자료형 정의
+Queue<Object> queue = new LinkedList<>();
