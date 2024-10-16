@@ -1,5 +1,8 @@
 package String.String04;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -33,7 +36,7 @@ public class Main {
             String temp = new StringBuilder(x).reverse().toString();
             answer.add(temp);
         }*/
-        // index를 이용한 방법
+        // index를 이용한 방법 lt rt
         for(String x : str) {
             char[] s = x.toCharArray();
             int lt=0, rt=x.length()-1;
@@ -50,7 +53,7 @@ public class Main {
         return answer;
     }
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Main T = new Main();
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -61,5 +64,34 @@ public class Main {
         for(String x : T.solution(n, str)) {
             System.out.println(x);
         }
+    }*/
+
+    public static void main(String[] args) throws IOException {
+        Main T = new Main();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        String[] arr = new String[n];
+        for (int i = 0; i<n; i++) {
+            arr[i] = br.readLine();
+        }
+        T.solution2(n, arr).forEach(System.out::println);
+    }
+
+    public ArrayList<String> solution2(int n, String[] str) {
+        ArrayList<String> answer = new ArrayList<>();
+        int lt, rt;
+        for (String x : str) {
+            lt = 0; rt = x.length()-1;
+            char[] arr = x.toCharArray();
+            while (lt < rt) {
+                char temp = arr[lt];
+                arr[lt] = arr[rt];
+                arr[rt] = temp;
+                lt++;
+                rt--;
+            }
+            answer.add(String.valueOf(arr));
+        }
+        return answer;
     }
 }
