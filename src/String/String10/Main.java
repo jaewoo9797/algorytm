@@ -3,7 +3,7 @@ package String.String10;
 import java.util.Scanner;
 
 public class Main {
-/*    public String solution(String str, String e) {
+    /*public String solution(String str, String e) {
         String answer = "";
         char[] arr = str.toCharArray();
         int len = arr.length;
@@ -57,8 +57,6 @@ public class Main {
                 answer[i] = Math.min(answer[i],p);
             }
         }
-
-
         return answer;
     }
 

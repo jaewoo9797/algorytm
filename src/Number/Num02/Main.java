@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public int solution(int n, int[] arr) {
         int answer = 0;
-        int max = 0;
+        int max = Integer.MIN_VALUE;
         for(int i=0; i<n; i++) {
             if(max < arr[i]) {
                 answer++;

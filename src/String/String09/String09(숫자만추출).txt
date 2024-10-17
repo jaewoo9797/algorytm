@@ -38,3 +38,4 @@ answer = answer * 10 + (x-48)
 0 은 아스키 코드 48
 
 Character.isDigit(char c) 문자가 숫자인지 boolean 리턴해준다.
+isLetter(char c)

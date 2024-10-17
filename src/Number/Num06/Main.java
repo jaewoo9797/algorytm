@@ -2,6 +2,7 @@ package Number.Num06;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class Main {
     public boolean isPrime(int n) {

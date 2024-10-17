@@ -1,6 +1,8 @@
 package String.String05;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
     public String solution(String str) {
@@ -24,10 +26,10 @@ public class Main {
         }
         return String.valueOf(ch);
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Main T = new Main();
-        Scanner sc = new Scanner(System.in);
-        String str = sc.next();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
         System.out.println(T.solution(str));
     }
 }

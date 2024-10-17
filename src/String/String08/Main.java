@@ -27,6 +27,7 @@ public class Main {
         String answer = "NO";
         str = str.toUpperCase().replaceAll("[^A-Z]","");
         String tmp = new StringBuilder(str).reverse().toString();
+        System.out.println(tmp);
         if(str.equals(tmp)) {
             answer = "YES";
         }
