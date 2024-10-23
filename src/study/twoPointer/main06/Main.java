@@ -1,4 +1,4 @@
-package pointer.po06;
+package study.twoPointer.main06;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,16 +7,17 @@ import java.util.StringTokenizer;
 
 public class Main {
     public int solution(int n, int k, int[] arr) {
-        int answer = 0; // 최대 수열 값
-        int cnt = 0;
-        int lt = 0;
-        for (int rt =0; rt < n; rt++) {
-            if(arr[rt] == 0) cnt++;
-            while(cnt > k) {
-                if(arr[lt] == 0) cnt--;
+        int answer = Integer.MIN_VALUE; // 1 인 요소의 길이 최댓값
+        int lt =0, cnt = 0;
+
+        for (int right = 0; right < n; right++) {
+            if (arr[right] == 0) cnt++;
+
+            while (cnt > k) {
+                if (arr[lt] == 0) cnt--;
                 lt++;
             }
-            answer = Math.max(answer , rt-lt+1);
+            answer = Math.max(answer, right-lt+1);
         }
         return answer;
     }
@@ -30,9 +31,9 @@ public class Main {
 
         int[] arr = new int[n];
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
+        for (int i=0; i<n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        System.out.println(T.solution(n, k, arr));
+        System.out.println(T.solution(n,k,arr));
     }
 }
