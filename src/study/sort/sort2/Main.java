@@ -1,14 +1,16 @@
-package sorting.sort02;
+package study.sort.sort2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringJoiner;
 import java.util.StringTokenizer;
 
 public class Main {
-    public int[] solution(int n, int[] arr) {
+
+    public static int[] solution(int n, int[] arr) {
         for (int i = n; i > 0; i--) {
-            for (int j = 0; j < i - 1; j++) {
+            for (int j = 0; j - 1 < i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -20,7 +22,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        Main T = new Main();
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int[] arr = new int[n];
@@ -28,9 +30,10 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        for (int x : T.solution(n, arr)) {
-            System.out.print(x + " ");
+        StringJoiner sj = new StringJoiner(" ");
+        for (int x : solution(n, arr)) {
+            sj.add(String.valueOf(x));
         }
-        ;
+        System.out.println(sj.toString());
     }
 }

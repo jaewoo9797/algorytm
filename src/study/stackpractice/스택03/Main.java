@@ -1,4 +1,4 @@
-package study.stack.스택03;
+package study.stackpractice.스택03;
 
 import java.io.BufferedReader;
 import java.io.IOException;

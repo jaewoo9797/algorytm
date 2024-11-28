@@ -1,4 +1,4 @@
-package study.stack.스택02;
+package study.stackpractice.스택02;
 
 import java.util.ArrayList;
 import java.util.List;

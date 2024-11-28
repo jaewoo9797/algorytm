@@ -1,27 +1,28 @@
-package sorting.sort01;
+package study.sort.sort1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
-    public int[] solution(int n, int[] arr) {
-        for (int i=0; i<n-1; i++) {
+
+    public static int[] solution(int n, int[] arr) {
+        for (int i = 0; i < n; i++) {
             int idx = i;
-            for (int j=i+1; j<n; j++) {
-                if(arr[idx] > arr[j]) idx = j;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[idx] > arr[j]) {
+                    idx = j;
+                }
+                int temp = arr[i];
+                arr[i] = arr[idx];
+                arr[idx] = temp;
             }
-            int tmp = arr[idx];
-            arr[idx] = arr[i];
-            arr[i] = tmp;
         }
         return arr;
     }
 
     public static void main(String[] args) throws IOException {
-        Main T = new Main();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int[] arr = new int[n];
@@ -29,7 +30,7 @@ public class Main {
         for (int i=0; i<n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        for (int x : T.solution(n, arr)) {
+        for (int x : solution(n, arr)) {
             System.out.print(x + " ");
         }
     }
