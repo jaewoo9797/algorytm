@@ -3,23 +3,22 @@ package study.sort.sort5;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 public class Main {
     public static String solution(int n, int[] arr) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Set<Integer> result = new HashSet<>();
         for (int x : arr) {
-            map.put(x, map.getOrDefault(x, 0) + 1);
-            if (map.get(x) > 1) {
+            if (result.contains(x)) {
                 return "D";
             }
+            result.add(x);
         }
 
         return "U";
     }
-
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
