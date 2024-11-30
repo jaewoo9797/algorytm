@@ -15,7 +15,6 @@ public class Main {
                 new Coordinate(3, 6)
         ));
         list.stream().sorted().forEach(System.out::println);
-        System.out.println("==========================");
         Collections.sort(list);
         list.forEach(System.out::println);
     }
