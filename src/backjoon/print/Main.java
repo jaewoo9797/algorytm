@@ -1,25 +1,47 @@
 package backjoon.print;
 
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        Map<String, String> favouriteMovies
-                = Map.ofEntries(
-                Map.entry("Raphael", "Star Wars"),
-                Map.entry("Cristina", "Matrix"),
-                Map.entry("Olivia", "James Bond"),
-                Map.entry("Alice", "ALICE")
-        );
 
-        favouriteMovies
-                .entrySet()
-                .stream()
-                .sorted(Entry.comparingByKey())
-                .forEachOrdered(System.out::println);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int testCount = Integer.parseInt(br.readLine());
+        StringTokenizer st = null;
+        for (int i = 0; i < testCount; i++) {
+            st = new StringTokenizer(br.readLine());
+            int n = Integer.parseInt(st.nextToken());
+            int m = Integer.parseInt(st.nextToken());
+
+            int[] priorities = new int[n];
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < n; j++) {
+                priorities[j] = Integer.parseInt(st.nextToken());
+            }
+
+            solution(n, m, priorities);
+        }
+        bw.flush();
+        bw.close();
     }
+
+    private static void solution(int n, int m, int[] priorities) {
+        Queue<Integer> que = new LinkedList<Integer>();
+        for (int i = 1; i <= n; i++) {
+            que.add(i);
+        }
+        System.out.println("que = " + que);
+    }
+
+
 }
