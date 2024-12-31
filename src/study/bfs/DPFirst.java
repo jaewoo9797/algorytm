@@ -18,8 +18,7 @@ public class DPFirst {
         }
 
         // Calculate and Save output for future use
-        memo[n] = fibRec(n - 1, memo) + fibRec(n - 2, memo);
-        return memo[n];
+        return memo[n] = fibRec(n - 1, memo) + fibRec(n - 2, memo);
     }
 
     private static long fib(int n) {
